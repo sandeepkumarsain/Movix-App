@@ -89,11 +89,11 @@ function Movies() {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4 text-center">Movies</h1>
+      <h1 className="mb-4 text-center text-light">Movies</h1>
 
       <div className="row mb-4">
         <div className="col-md-6 mb-3">
-          <label htmlFor="genre" className="form-label">
+          <label htmlFor="genre" className="form-label text-light">
             Select Genre:
           </label>
           <select
@@ -112,7 +112,7 @@ function Movies() {
         </div>
 
         <div className="col-md-6 mb-3">
-          <label htmlFor="sortBy" className="form-label">
+          <label htmlFor="sortBy" className="form-label text-light">
             Sort By:
           </label>
           <select
