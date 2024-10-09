@@ -3,7 +3,7 @@ import { MovieProvider } from "../../context/MovieContext";
 import Trending from "./homeComponents/Trending";
 import Popular from "./homeComponents/Popular";
 import TopRated from "./homeComponents/TopRated";
-import Upcoming from "./homeComponents/Upcomming";
+import Upcomming from "./homeComponents/UpComming";
 import HeroBanner from "./homeComponents/HeroBanner";
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
         <h1 className="text-center my-4">Top Rated Movies</h1>
         <TopRated />
         <h1 className="text-center my-4">Upcoming Movies</h1>
-        <Upcoming />
+        <Upcomming />
       </div>
     </MovieProvider>
   );

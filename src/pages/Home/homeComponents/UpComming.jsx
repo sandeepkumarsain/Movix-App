@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MovieContext from "../../../context/MovieContext";
 
-function Upcoming() {
+function Upcomming() {
   const { upcoming, loading, error } = useContext(MovieContext);
 
   if (loading) return <div>Loading...</div>;
@@ -27,4 +27,4 @@ function Upcoming() {
   );
 }
 
-export default Upcoming;
+export default Upcomming;
