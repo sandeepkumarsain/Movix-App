@@ -12,7 +12,7 @@ export const MovieProvider = ({ children }) => {
     error: null,
   });
 
-  const API_KEY = "c6fb36a8605634e1c243f9e0317511cc";
+  const API_KEY = "0f37a05a4fd0810f65ce7c9635b185e8";
   const base_url = "https://api.themoviedb.org/3";
 
   const requests = {
