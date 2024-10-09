@@ -6,7 +6,16 @@ import { FaSearch } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <Navbar
+      bg="transparent"
+      variant="dark"
+      expand="lg"
+      sticky="top"
+      style={{
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+      }}
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -18,11 +27,10 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            {" "}
-            <LinkContainer to="/movie">
+            <LinkContainer to="/movies">
               <Nav.Link>Movies</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/tvShow">
+            <LinkContainer to="/tvshows">
               <Nav.Link>TV Shows</Nav.Link>
             </LinkContainer>
             <Nav.Link href="#search">

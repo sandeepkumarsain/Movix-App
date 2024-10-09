@@ -1,11 +1,11 @@
 import React from "react";
 import Home from "../pages/Home/Home";
-import Movie from "../pages/Movie";
-import TvShow from "../pages/TvShow";
+import Movies from "../pages/Movies";
+import TvShows from "../pages/TvShows";
 import Header from "./Header";
 import Footer from "./Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-
+import Search from "./Search";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,13 +22,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/movie",
-        element: <Movie />,
+        path: "/movies",
+        element: <Movies />,
       },
       {
-        path: "/tvShow",
-        element: <TvShow />,
-      },
+        path: "/tvshows",
+        element: <TvShows />,
+      },{
+        path:"/searchQuery",
+        element:<Search/>
+      }
     ],
   },
 ]);

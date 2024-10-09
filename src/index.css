@@ -1,179 +1,49 @@
-/* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0d0d0d;
-  color: #e5e5e5;
+  background-color: rgba(4, 21, 46, 1);
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
 }
-
-h1 {
-  text-align: center;
-  /* margin-top: 40px; */
-  font-size: 2.5rem;
-  color: #f5c518;
-  letter-spacing: 1px;
-}
-
-/* Loader Styles */
-.loader-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.loader {
-  border: 8px solid rgba(255, 255, 255, 0.2);
-  border-top: 8px solid #f5c518;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Container for Movie Grid */
-.home-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.movie-grid {
-  display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  justify-content: center; /* Center aligns the items */
-  gap: 30px; /* Space between items */
-  margin-top: 40px;
-}
-
-/* Movie Card Styles */
-.product-card {
-  display: flex; /* Apply flexbox layout */
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center align items horizontally */
-  justify-content: flex-start; /* Align items at the top */
-  background-color: #1a1a1a;
-  border-radius: 15px;
-  overflow: hidden;
-  width: 200px; /* Fixed width for cards */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-}
-
-.product-card:hover {
-  transform: scale(1.05); /* Slightly enlarges the card on hover */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
-}
-
-/* Poster Styles */
-.movie-poster {
-  width: 100%; /* Full width of the card */
-  height: 300px; /* Fixed height for consistency */
-  object-fit: cover; /* Ensures the image covers the area */
-  border-bottom: 4px solid #f5c518; /* Bottom border for styling */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
-}
-
-.product-card:hover .movie-poster {
-  opacity: 0.8; /* Changes opacity on hover */
-}
-
-/* Movie Title Styles */
-.movie-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #f5c518;
-  padding: 10px;
-  text-align: center;
-  background-color: #111;
-  border-top: 2px solid rgba(255, 255, 255, 0.1);
-  transition: color 0.3s ease; /* Smooth color transition */
-  width: 100%; /* Full width for the title */
-}
-
-.product-card:hover .movie-title {
-  color: #ffffff; /* Changes title color on hover */
-}
-
-/* Media Query for Responsive Design */
-@media screen and (max-width: 768px) {
-  .product-card {
-    width: 160px; /* Adjusts card width for medium screens */
-  }
-
-  .movie-title {
-    font-size: 1rem; /* Adjusts title font size */
-  }
-
-  .movie-poster {
-    height: 240px; /* Adjusts poster height */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .product-card {
-    width: 140px; /* Adjusts card width for small screens */
-  }
-
-  .movie-title {
-    font-size: 0.9rem; /* Adjusts title font size */
-  }
-
-  .movie-poster {
-    height: 200px; /* Adjusts poster height */
-  }
-}
-.background {
+/* 
+.hero-banner {
+ 
+  height: 400px;
   width: 100%;
-  height: 700px;
-  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center;
+} */
+/* 
+.banner-content {
   text-align: center;
+  padding: 50px 20px;
 }
-.background h1{
-padding-top: 9rem;
-color: #fff;
-font-weight: bold;
-font-size: 62px;
-}
-.background p{
-  font-size: 22px;
-  font-weight: bold;
-}
-.input input {
-  width: 680px;
-  height: 55px;
-  border-radius: 20px 0px 0px 20px;
-  border: none;
-  outline: none;
-  padding: 10px;
-}
-.input button{
-  width: 100px;
-  padding: 10px;
-  background-color: #e96635;
-  color: #fff;
-  height: 55px;
-  border-radius: 0px 20px 20px 0px;
-  border: none;
-  outline: none;
-}
-.navbar{
-  /* background: linear-gradient(90deg, rgba(0, 184, 184, 0.1), rgba(189, 177, 177, 0.1)); */
-      background: #2c2b2b9a;
-      backdrop-filter: blur(3.5px);
-      position: fixed;
-      width: 100%;
-}
-.navbar a{
-  color: #fff;
 
+.banner-content h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 10px;
 }
+
+.banner-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.inp {
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
