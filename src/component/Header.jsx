@@ -36,6 +36,9 @@ const Header = () => {
             <Nav.Link href="#search">
               <FaSearch />
             </Nav.Link>
+            <LinkContainer to="/contact">
+              <Nav.Link>Contact-Us</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
