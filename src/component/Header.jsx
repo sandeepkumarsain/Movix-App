@@ -2,7 +2,8 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa"; 
+import { MdOutlinePermContactCalendar } from "react-icons/md"; 
 
 const Header = () => {
   return (
@@ -33,11 +34,13 @@ const Header = () => {
             <LinkContainer to="/tvshows">
               <Nav.Link>TV Shows</Nav.Link>
             </LinkContainer>
-            <Nav.Link href="#search">
+            <Nav.Link href="/search">
               <FaSearch />
             </Nav.Link>
             <LinkContainer to="/contact">
-              <Nav.Link>Contact-Us</Nav.Link>
+              <Nav.Link>
+                <MdOutlinePermContactCalendar />
+              </Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

@@ -30,7 +30,7 @@ function HeroBanner() {
           type="text"
           placeholder="search for Movie or tvShows"
         />
-        <button className="btn"></button>
+        <button className="btn">search</button>
       </div>
     </div>
   );
