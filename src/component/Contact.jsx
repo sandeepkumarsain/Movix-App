@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getDatabase, ref, set } from "firebase/database";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDwtBk-xsCsu8yEeHEKN8z0tHWHdoXtEqQ",
   authDomain: "formik-c355c.firebaseapp.com",
@@ -16,170 +16,152 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app); // Initialize Firestore
+const database = getDatabase(app);
 
-const writeUserData = async (firstName, lastName, email, phone, message) => {
-  try {
-    // Add a new document in the "users" collection
-    await addDoc(collection(db, "users"), {
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-      createdAt: new Date(), // Optionally, add a timestamp
-    });
-    console.log("Document written successfully");
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
+// Function to write user data to Firebase
+const writeUserData = (firstName, lastName, email, phoneNumber, message) => {
+  set(ref(database, "users/" + email.replace(".", "_")), {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    message,
+  });
 };
 
-function Contact() {
-  return (
-    <div className="form-name">
-      <h1 className="log">Please login here!</h1>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.firstName) {
-            errors.firstName = "Required";
-          }
-          if (!values.lastName) {
-            errors.lastName = "Required";
-          }
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
-          }
-          if (!values.phone) {
-            errors.phone = "Required";
-          } else if (!/^\d{10}$/.test(values.phone)) {
-            errors.phone = "Invalid phone number, must be 10 digits";
-          }
-          if (!values.message) {
-            errors.message = "Required";
-          }
-          return errors;
-        }}
-        onSubmit={async (values, { setSubmitting }) => {
-          try {
-            // Store the data in Firestore
-            await writeUserData(
-              values.firstName,
-              values.lastName,
-              values.email,
-              values.phone,
-              values.message
-            );
+const Contact = () => (
+  <div>
+    <h1>Submit your details!</h1>
+    <Formik
+      initialValues={{
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
+      }}
+      validate={(values) => {
+        const errors = {};
+        if (!values.firstName) {
+          errors.firstName = "First name is required";
+        }
+        if (!values.lastName) {
+          errors.lastName = "Last name is required";
+        }
+        if (!values.email) {
+          errors.email = "Email is required";
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = "Invalid email address";
+        }
+        if (!values.phoneNumber) {
+          errors.phoneNumber = "Phone number is required";
+        } else if (!/^\d{10}$/.test(values.phoneNumber)) {
+          errors.phoneNumber = "Phone number must be 10 digits";
+        }
+        if (!values.message) {
+          errors.message = "Message is required";
+        }
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        // Store the data in Firebase
+        writeUserData(
+          values.firstName,
+          values.lastName,
+          values.email,
+          values.phoneNumber,
+          values.message
+        );
 
-            // Display the form values directly after submission
-            alert(JSON.stringify(values, null, 2));
-          } catch (error) {
-            console.error("Submission failed: ", error);
-            alert("Error submitting data, please try again.");
-          }
-
-          // Mark form submission as complete
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
-        }}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                placeholder="Enter your first name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.firstName}
-              />
-              {errors.firstName && touched.firstName && (
-                <div>{errors.firstName}</div>
-              )}
-            </div>
+        }, 400);
+      }}
+    >
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+      }) => (
+        <form onSubmit={handleSubmit}>
+          <label>
+            First Name:
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.firstName}
+            />
+          </label>
+          {errors.firstName && touched.firstName && errors.firstName}
 
-            <div>
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Enter your last name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.lastName}
-              />
-              {errors.lastName && touched.lastName && (
-                <div>{errors.lastName}</div>
-              )}
-            </div>
+          <label>
+            Last Name:
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.lastName}
+            />
+          </label>
+          {errors.lastName && touched.lastName && errors.lastName}
 
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.email}
-              />
-              {errors.email && touched.email && <div>{errors.email}</div>}
-            </div>
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+            />
+          </label>
+          {errors.email && touched.email && errors.email}
 
-            <div>
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="text"
-                name="phone"
-                placeholder="Enter your phone number"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.phone}
-              />
-              {errors.phone && touched.phone && <div>{errors.phone}</div>}
-            </div>
+          <label>
+            Phone Number:
+            <input
+              type="text"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.phoneNumber}
+            />
+          </label>
+          {errors.phoneNumber && touched.phoneNumber && errors.phoneNumber}
 
-            <div>
-              <label htmlFor="message">Message</label>
-              <textarea
-                name="message"
-                placeholder="Enter your message"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.message}
-              />
-              {errors.message && touched.message && <div>{errors.message}</div>}
-            </div>
+          <label>
+            Message:
+            <textarea
+              name="message"
+              placeholder="Your message"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.message}
+            />
+          </label>
+          {errors.message && touched.message && errors.message}
 
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </form>
-        )}
-      </Formik>
-    </div>
-  );
-}
+          <button type="submit" disabled={isSubmitting}>
+            Submit
+          </button>
+        </form>
+      )}
+    </Formik>
+  </div>
+);
 
 export default Contact;
