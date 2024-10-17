@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { Link } from "react-router-dom";
 const API_KEY = "c6fb36a8605634e1c243f9e0317511cc";
 const base_url = "https://api.themoviedb.org/3";
 
@@ -135,12 +135,15 @@ function Movies() {
         {movies.map((movie, index) => (
           <div key={`${movie.id}-${index}`} className="col-md-3 col-sm-6 mb-4">
             <div className="card h-100">
+              <Link to = {`/movie/${movie.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
                 className="card-img-top"
                 style={{ height: "400px", objectFit: "cover" }}
               />
+              </Link>
+             
               <div className="card-body">
                 <h5 className="card-title">{movie.title}</h5>
               </div>

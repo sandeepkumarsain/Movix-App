@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -135,12 +136,15 @@ function TVShows() {
         {tvShows.map((tvShow, index) => (
           <div key={`${tvShow.id}-${index}`} className="col-md-3 col-sm-6 mb-4">
             <div className="card h-100">
+              <Link to = {`/movie/${tvShow.id}`}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
                 alt={tvShow.name}
                 className="card-img-top"
                 style={{ height: "400px", objectFit: "cover" }}
               />
+              </Link>
+             
               <div className="card-body">
                 <h5 className="card-title">{tvShow.name}</h5>
               </div>

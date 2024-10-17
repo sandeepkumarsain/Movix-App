@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Contact from "./Contact";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Search from "./Search";
+import MovieDetails from "./MovieDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,9 @@ const router = createBrowserRouter([
       },{
         path:"/contact",
         element:<Contact/>
+      },{
+        path:"/movie/:id",
+        element:< MovieDetails/>
       }
     ],
   },

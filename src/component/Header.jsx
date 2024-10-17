@@ -34,9 +34,11 @@ const Header = () => {
             <LinkContainer to="/tvshows">
               <Nav.Link>TV Shows</Nav.Link>
             </LinkContainer>
-            <Nav.Link href="/search">
+            <LinkContainer to="/search">
+              <Nav.Link>
               <FaSearch />
-            </Nav.Link>
+              </Nav.Link>
+            </LinkContainer>
             <LinkContainer to="/contact">
               <Nav.Link>
                 <MdOutlinePermContactCalendar />

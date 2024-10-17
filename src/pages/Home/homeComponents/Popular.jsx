@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import MovieContext from "../../../context/MovieContext";
-
+import { Link } from "react-router-dom";
 function Popular() {
   const { popular, loading, error } = useContext(MovieContext);
 
@@ -33,11 +33,14 @@ function Popular() {
               {chunk.map((movie) => (
                 <div className="col-md-3 mb-4" key={movie.id}>
                   <div className="card">
+                    <Link to = {`/movie/${movie.id}`}>
                     <img
                       src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                       alt={movie.title}
                       className="card-img-top"
                     />
+                    </Link>
+                   
                     <div className="card-body">
                       <h5>{movie.title}</h5>
                     </div>
