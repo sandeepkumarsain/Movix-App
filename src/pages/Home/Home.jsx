@@ -5,19 +5,20 @@ import Popular from "./homeComponents/Popular";
 import TopRated from "./homeComponents/TopRated";
 import Upcomming from "./homeComponents/UpComming";
 import HeroBanner from "./homeComponents/HeroBanner";
+import SlideButton from "../../component/SlideButton";
 
 function Home() {
   return (
     <MovieProvider>
       <HeroBanner />
       <div className="container text-light mt-5">
-        <h1 className="text-center mb-4">Trending Movies</h1>
+        <SlideButton title="Trending Movies" />
         <Trending />
-        <h1 className="text-center my-4">Popular Movies</h1>
+        <SlideButton title="Popular Movies" />
         <Popular />
-        <h1 className="text-center my-4">Top Rated Movies</h1>
+        <SlideButton title="Top Rated Movies" />
         <TopRated />
-        <h1 className="text-center my-4">Upcoming Movies</h1>
+        <SlideButton title="Upcoming Movies" />
         <Upcomming />
       </div>
     </MovieProvider>
