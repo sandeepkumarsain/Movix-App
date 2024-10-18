@@ -17,11 +17,6 @@ function Home() {
         <Popular />
         <SlideButton title="Top Rated " />
         <TopRated />
-<<<<<<< HEAD
-        <SlideButton title="Upcoming " />
-        <Upcomming />
-=======
->>>>>>> ded231e557224560ee34069c94ca0cd957a7e907
       </div>
     </MovieProvider>
   );
