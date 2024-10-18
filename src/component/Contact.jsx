@@ -154,7 +154,7 @@ const Contact = () => (
           </label>
           {errors.message && touched.message && errors.message}
 
-          <button type="submit" disabled={isSubmitting}>
+          <button className="fbtn" type="submit" disabled={isSubmitting}>
             Submit
           </button>
         </form>

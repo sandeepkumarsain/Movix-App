@@ -12,13 +12,13 @@ function Home() {
     <MovieProvider>
       <HeroBanner />
       <div className="container text-light mt-5">
-        <SlideButton title="Trending Movies" />
+        <SlideButton title="Trending" />
         <Trending />
-        <SlideButton title="Popular Movies" />
+        <SlideButton title="What's popular" />
         <Popular />
-        <SlideButton title="Top Rated Movies" />
+        <SlideButton title="Top Rated " />
         <TopRated />
-        <SlideButton title="Upcoming Movies" />
+        <SlideButton title="Upcoming " />
         <Upcomming />
       </div>
     </MovieProvider>

@@ -26,11 +26,11 @@ function HeroBanner() {
     >
       <div className="banner-content">
         <input
-          className="inp"
+          className="inps"
           type="text"
           placeholder="search for Movie or tvShows"
         />
-        <button className="btn">search</button>
+        <button className="btns">search</button>
       </div>
     </div>
   );
