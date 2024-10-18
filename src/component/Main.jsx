@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Search from "./Search";
 import MovieDetails from "./MovieDetail";
+import SearchResults from "./SearchResults";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,16 +31,23 @@ const router = createBrowserRouter([
       {
         path: "/tvshows",
         element: <TvShows />,
-      },{
-        path:"/search",
-        element:<Search/>
-      },{
-        path:"/contact",
-        element:<Contact/>
-      },{
-        path:"/movie/:id",
-        element:< MovieDetails/>
-      }
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/movie/:id",
+        element: <MovieDetails />,
+      },
+      {
+        path: "/search/:query",
+        element: <SearchResults />,
+      },
     ],
   },
 ]);

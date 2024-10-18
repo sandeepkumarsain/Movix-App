@@ -3,8 +3,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
-
-
+/* -------------------------------------------------------------- contact */
 .formContainer {
   background-color: #fff;
   padding: 30px;
@@ -46,7 +45,7 @@ textarea:focus {
 }
 
 textarea {
-  width: 100%; 
+  width: 100%;
   height: 120px;
   resize: vertical;
 }
@@ -67,7 +66,6 @@ button {
 button:disabled {
   background-color: #fa6363;
   cursor: not-allowed;
-  
 }
 
 button:hover:not(:disabled) {
@@ -80,27 +78,30 @@ button:hover:not(:disabled) {
   margin-bottom: 15px;
 }
 
-.carousel-control-prev{
+.carousel-control-prev {
   height: 70px;
   margin-top: 220px;
   width: 30px;
 }
-.carousel-control-next{
+.carousel-control-next {
   height: 70px;
   margin-top: 220px;
   width: 30px;
 }
+/* -------------------------------------------------------------- movie detail */
 
-.mp{
+.mp {
   color: #fff;
 }
-.inp{
+
+/* -------------------------------------------------------------- hero-banner */
+.inp {
   width: 50%;
-  border-radius: 20px 0px 0px 20px ;
+  border-radius: 20px 0px 0px 20px;
   outline: none;
   border: none;
 }
-.btn{
+.btn {
   width: 10%;
   height: 45px;
   border-radius: 0px 20px 20px 0px;
@@ -108,17 +109,16 @@ button:hover:not(:disabled) {
   background-color: #f1a439;
   color: #fff;
 }
-.banner-content{
+.banner-content {
   width: 75%;
- 
 }
-.hero-banner{
+.hero-banner {
   display: flex;
   align-items: center;
   justify-content: end;
 }
 
-                                                                   /* CircleRating */
+/* --------------------------------------------------------------CircleRating */
 
 .circular-chart {
   display: block;
@@ -152,11 +152,7 @@ button:hover:not(:disabled) {
   color: white;
 }
 
-.search-input {
-  width: 100% !important; /* Ensure the width takes precedence */
-  display: inline-block;
-}
-
+/* --------------------------------------------------------------slidebutton */
 
 .slidebutton {
   display: flex;
