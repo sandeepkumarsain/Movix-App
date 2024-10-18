@@ -117,7 +117,23 @@ textarea {
   align-items: center;
   justify-content: end;
 }
+@media (max-width: 480px) {
+  .banner-content {
+    width: 100%; 
+    /* flex-direction: column;  */
+    align-items: center; 
+  }
 
+  .inps {
+    width: 70%; /* Full width for input */
+    margin-bottom: 10px; /* Add some space below the input */
+  }
+
+  .btns {
+    width: 30%; /* Full width for button */
+    height: 45px; /* Keep height manageable */
+  }
+}
 /* --------------------------------------------------------------CircleRating */
 
 .circular-chart {
