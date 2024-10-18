@@ -13,7 +13,6 @@ const firebaseConfig = {
   appId: "1:799683424080:web:81df3e07ecd95aac1b0655",
   databaseURL: "https://formik-c355c-default-rtdb.firebaseio.com/",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
