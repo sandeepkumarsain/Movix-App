@@ -137,3 +137,27 @@ button:hover:not(:disabled) {
   width: 30px;
 }
 
+.mp{
+  color: #fff;
+}
+.inp{
+  width: 50%;
+  border-radius: 20px 0px 0px 20px ;
+}
+.btn{
+  width: 10%;
+  height: 47px;
+  border-radius: 0px 20px 20px 0px;
+  margin-top: 10px;
+  background-color: #f1a439;
+  color: #fff;
+}
+.banner-content{
+  width: 75%;
+ 
+}
+.hero-banner{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}

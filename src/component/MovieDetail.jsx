@@ -47,6 +47,7 @@ function MovieDetails() {
         alt={movie.title}
         className="img-fluid"
       />
+      <div className="mp">
       <p>{movie.overview}</p>
       <p>
         <strong>Release Date:</strong> {movie.release_date}
@@ -54,6 +55,7 @@ function MovieDetails() {
       <p>
         <strong>Rating:</strong> {movie.vote_average}
       </p>
+      </div>
       {/* Pass movie rating to CircleRating */}
       {/* <CircleRating rating={movie.vote_average} /> */}
     </div>
